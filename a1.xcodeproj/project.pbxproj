@@ -1,0 +1,346 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3EE40CC4160D04A900531768 /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3EE40CB7160D04A900531768 /* camera.cpp */; };
+		3EE40CC5160D04A900531768 /* curve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3EE40CB9160D04A900531768 /* curve.cpp */; };
+		3EE40CC6160D04A900531768 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3EE40CBC160D04A900531768 /* main.cpp */; };
+		3EE40CC8160D04A900531768 /* parse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3EE40CBF160D04A900531768 /* parse.cpp */; };
+		3EE40CC9160D04A900531768 /* surf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3EE40CC1160D04A900531768 /* surf.cpp */; };
+		3EE40D25160D05D100531768 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE40D24160D05D100531768 /* GLUT.framework */; };
+		3EE40D27160D05D500531768 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE40D26160D05D500531768 /* OpenGL.framework */; };
+		3EE40D2B160D061800531768 /* libvecmath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE40D2A160D061800531768 /* libvecmath.a */; };
+		3EE40D52160D073E00531768 /* include in Headers */ = {isa = PBXBuildFile; fileRef = 3EE40D40160D06DB00531768 /* include */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3EE40D2D160D068300531768 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EE40D20160D04FA00531768 /* vecmath 3.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3EE40D00160D04FA00531768;
+			remoteInfo = vecmath;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3EE40CA4160D040700531768 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3EE40CA6160D040700531768 /* a1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = a1; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EE40CB7160D04A900531768 /* camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = camera.cpp; sourceTree = "<group>"; };
+		3EE40CB8160D04A900531768 /* camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
+		3EE40CB9160D04A900531768 /* curve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = curve.cpp; sourceTree = "<group>"; };
+		3EE40CBA160D04A900531768 /* curve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = curve.h; sourceTree = "<group>"; };
+		3EE40CBB160D04A900531768 /* extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = extra.h; sourceTree = "<group>"; };
+		3EE40CBC160D04A900531768 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3EE40CBF160D04A900531768 /* parse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = parse.cpp; sourceTree = "<group>"; };
+		3EE40CC0160D04A900531768 /* parse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parse.h; sourceTree = "<group>"; };
+		3EE40CC1160D04A900531768 /* surf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = surf.cpp; sourceTree = "<group>"; };
+		3EE40CC2160D04A900531768 /* surf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = surf.h; sourceTree = "<group>"; };
+		3EE40CC3160D04A900531768 /* tuple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tuple.h; sourceTree = "<group>"; };
+		3EE40CEF160D04E900531768 /* circles.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = circles.swp; sourceTree = "<group>"; };
+		3EE40CF0160D04E900531768 /* core.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = core.swp; sourceTree = "<group>"; };
+		3EE40CF1160D04E900531768 /* flircle.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = flircle.swp; sourceTree = "<group>"; };
+		3EE40CF2160D04E900531768 /* florus.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = florus.swp; sourceTree = "<group>"; };
+		3EE40CF3160D04E900531768 /* gentorus.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = gentorus.swp; sourceTree = "<group>"; };
+		3EE40CF4160D04E900531768 /* norm.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = norm.swp; sourceTree = "<group>"; };
+		3EE40CF5160D04E900531768 /* tor.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = tor.swp; sourceTree = "<group>"; };
+		3EE40CF6160D04E900531768 /* weird.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = weird.swp; sourceTree = "<group>"; };
+		3EE40CF7160D04E900531768 /* weirder.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = weirder.swp; sourceTree = "<group>"; };
+		3EE40CF8160D04E900531768 /* wineglass.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = wineglass.swp; sourceTree = "<group>"; };
+		3EE40D20160D04FA00531768 /* vecmath 3.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "vecmath 3.xcodeproj"; path = "one-xcode/vecmath/vecmath 3.xcodeproj"; sourceTree = "<group>"; };
+		3EE40D24160D05D100531768 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		3EE40D26160D05D500531768 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		3EE40D2A160D061800531768 /* libvecmath.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libvecmath.a; path = "one-xcode/vecmath/lib/libvecmath.a"; sourceTree = "<group>"; };
+		3EE40D40160D06DB00531768 /* include */ = {isa = PBXFileReference; lastKnownFileType = file; name = include; path = "one-xcode/vecmath/include"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3EE40CA3160D040700531768 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EE40D27160D05D500531768 /* OpenGL.framework in Frameworks */,
+				3EE40D25160D05D100531768 /* GLUT.framework in Frameworks */,
+				3EE40D2B160D061800531768 /* libvecmath.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3EE40C9B160D040700531768 = {
+			isa = PBXGroup;
+			children = (
+				3EE40CA9160D040700531768 /* a1 */,
+				3EE40D2C160D062000531768 /* frameworks */,
+				3EE40D40160D06DB00531768 /* include */,
+				3EE40D20160D04FA00531768 /* vecmath 3.xcodeproj */,
+				3EE40CA7160D040700531768 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3EE40CA7160D040700531768 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3EE40CA6160D040700531768 /* a1 */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3EE40CA9160D040700531768 /* a1 */ = {
+			isa = PBXGroup;
+			children = (
+				3EE40CB7160D04A900531768 /* camera.cpp */,
+				3EE40CB8160D04A900531768 /* camera.h */,
+				3EE40CB9160D04A900531768 /* curve.cpp */,
+				3EE40CBA160D04A900531768 /* curve.h */,
+				3EE40CBB160D04A900531768 /* extra.h */,
+				3EE40CBC160D04A900531768 /* main.cpp */,
+				3EE40CBF160D04A900531768 /* parse.cpp */,
+				3EE40CC0160D04A900531768 /* parse.h */,
+				3EE40CC1160D04A900531768 /* surf.cpp */,
+				3EE40CC2160D04A900531768 /* surf.h */,
+				3EE40CC3160D04A900531768 /* tuple.h */,
+				3EE40CEE160D04E900531768 /* swp */,
+			);
+			name = a1;
+			path = "one-xcode";
+			sourceTree = "<group>";
+		};
+		3EE40CEE160D04E900531768 /* swp */ = {
+			isa = PBXGroup;
+			children = (
+				3EE40CEF160D04E900531768 /* circles.swp */,
+				3EE40CF0160D04E900531768 /* core.swp */,
+				3EE40CF1160D04E900531768 /* flircle.swp */,
+				3EE40CF2160D04E900531768 /* florus.swp */,
+				3EE40CF3160D04E900531768 /* gentorus.swp */,
+				3EE40CF4160D04E900531768 /* norm.swp */,
+				3EE40CF5160D04E900531768 /* tor.swp */,
+				3EE40CF6160D04E900531768 /* weird.swp */,
+				3EE40CF7160D04E900531768 /* weirder.swp */,
+				3EE40CF8160D04E900531768 /* wineglass.swp */,
+			);
+			path = swp;
+			sourceTree = "<group>";
+		};
+		3EE40D21160D04FA00531768 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3EE40D2C160D062000531768 /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3EE40D26160D05D500531768 /* OpenGL.framework */,
+				3EE40D24160D05D100531768 /* GLUT.framework */,
+				3EE40D2A160D061800531768 /* libvecmath.a */,
+			);
+			name = frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3EE40D2F160D06A900531768 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EE40D52160D073E00531768 /* include in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3EE40CA5160D040700531768 /* a1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EE40CB0160D040700531768 /* Build configuration list for PBXNativeTarget "a1" */;
+			buildPhases = (
+				3EE40D2F160D06A900531768 /* Headers */,
+				3EE40CA2160D040700531768 /* Sources */,
+				3EE40CA3160D040700531768 /* Frameworks */,
+				3EE40CA4160D040700531768 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3EE40D2E160D068300531768 /* PBXTargetDependency */,
+			);
+			name = a1;
+			productName = "one-xcode";
+			productReference = 3EE40CA6160D040700531768 /* a1 */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3EE40C9D160D040700531768 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Ethan Sherbondy";
+			};
+			buildConfigurationList = 3EE40CA0160D040700531768 /* Build configuration list for PBXProject "a1" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3EE40C9B160D040700531768;
+			productRefGroup = 3EE40CA7160D040700531768 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3EE40D21160D04FA00531768 /* Products */;
+					ProjectRef = 3EE40D20160D04FA00531768 /* vecmath 3.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				3EE40CA5160D040700531768 /* a1 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3EE40CA2160D040700531768 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EE40CC4160D04A900531768 /* camera.cpp in Sources */,
+				3EE40CC5160D04A900531768 /* curve.cpp in Sources */,
+				3EE40CC6160D04A900531768 /* main.cpp in Sources */,
+				3EE40CC8160D04A900531768 /* parse.cpp in Sources */,
+				3EE40CC9160D04A900531768 /* surf.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3EE40D2E160D068300531768 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = vecmath;
+			targetProxy = 3EE40D2D160D068300531768 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3EE40CAE160D040700531768 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3EE40CAF160D040700531768 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3EE40CB1160D040700531768 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/one-xcode/vecmath/lib\"",
+				);
+				PRODUCT_NAME = a1;
+			};
+			name = Debug;
+		};
+		3EE40CB2160D040700531768 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/one-xcode/vecmath/lib\"",
+				);
+				PRODUCT_NAME = a1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3EE40CA0160D040700531768 /* Build configuration list for PBXProject "a1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EE40CAE160D040700531768 /* Debug */,
+				3EE40CAF160D040700531768 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3EE40CB0160D040700531768 /* Build configuration list for PBXNativeTarget "a1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EE40CB1160D040700531768 /* Debug */,
+				3EE40CB2160D040700531768 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3EE40C9D160D040700531768 /* Project object */;
+}
