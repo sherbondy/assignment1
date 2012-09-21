@@ -27,6 +27,22 @@ namespace
         return ( lhs - rhs ).absSquared() < eps;
     }
 
+    // The Bernstein matrix and its cuddly derivatives wrt time.
+    
+    const Matrix4f BERN(1, -3,  3, -1,
+                        0,  3, -6,  3,
+                        0,  0,  3, -3,
+                        0,  0,  0,  1);
+    
+    const Matrix4f DBERN(-3,   6, -3, 0,
+                          3, -12,  9, 0,
+                          0,   6, -9, 0,
+                          0,   0,  3, 0);
+    
+    const Matrix4f D2BERN(  6,   -6, 0, 0,
+                          -12,   18, 0, 0,
+                            6,  -18, 0, 0,
+                            0,    6, 0, 0);
     
 }
     
@@ -59,7 +75,7 @@ Curve evalBezier( const vector< Vector3f >& P, unsigned steps )
     
     unsigned pieceCount = (P.size() - 4)/3 + 1;
     unsigned totalSampleCount = pieceCount * steps;
-    Curve R(steps + 1);
+    Curve R(totalSampleCount + 1);
 
     cerr << "\t>>> evalBezier has been called with the following input:" << endl;
 
@@ -84,6 +100,8 @@ Curve evalBspline( const vector< Vector3f >& P, unsigned steps )
         cerr << "evalBspline must be called with 4 or more control points." << endl;
         exit( 0 );
     }
+    
+    Curve bspR(steps + 1);
 
     // TODO:
     // It is suggested that you implement this function by changing
@@ -102,7 +120,7 @@ Curve evalBspline( const vector< Vector3f >& P, unsigned steps )
     cerr << "\t>>> Returning empty curve." << endl;
 
     // Return an empty curve right now.
-    return Curve();
+    return bspR;
 }
 
 Curve evalCircle( float radius, unsigned steps )
