@@ -14,7 +14,7 @@ struct CurvePoint
     Vector3f V; // Vertex
     Vector3f T; // Tangent  (unit)
     Vector3f N; // Normal   (unit)
-    Vector3f B; // Binormal (unit) // aka the other tangent vector
+    Vector3f B; // Binormal (unit) // (B) aka the cotangent vector
 };
 
 // This is just a handy shortcut.

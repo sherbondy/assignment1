@@ -56,20 +56,24 @@ Curve evalBezier( const vector< Vector3f >& P, unsigned steps )
     // Also note that you may assume that all Bezier curves that you
     // receive have G1 continuity.  Otherwise, the TNB will not be
     // be defined at points where this does not hold.
+    
+    unsigned pieceCount = (P.size() - 4)/3 + 1;
+    unsigned totalSampleCount = pieceCount * steps;
+    Curve R(steps + 1);
 
     cerr << "\t>>> evalBezier has been called with the following input:" << endl;
 
     cerr << "\t>>> Control points (type vector< Vector3f >): "<< endl;
     for( unsigned i = 0; i < P.size(); ++i )
     {
-        cerr << "\t>>> " << P[i] << endl;
+        P[i].print();
     }
 
     cerr << "\t>>> Steps (type steps): " << steps << endl;
-    cerr << "\t>>> Returning empty curve." << endl;
+    cerr << "\t>>> Returning curve with " << totalSampleCount << " samples" << endl;
 
     // Right now this will just return this empty curve.
-    return Curve();
+    return R;
 }
 
 Curve evalBspline( const vector< Vector3f >& P, unsigned steps )
@@ -91,7 +95,7 @@ Curve evalBspline( const vector< Vector3f >& P, unsigned steps )
     cerr << "\t>>> Control points (type vector< Vector3f >): "<< endl;
     for( unsigned i = 0; i < P.size(); ++i )
     {
-        cerr << "\t>>> " << P[i] << endl;
+        P[i].print();
     }
 
     cerr << "\t>>> Steps (type steps): " << steps << endl;

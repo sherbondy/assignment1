@@ -82,7 +82,7 @@ bool parseFile(istream &in,
 
     unsigned counter = 0;
     
-    // bez2 name . 
+    // bez2 name . steps control-points
     while (in >> objType) 
     {
         cerr << ">object " << counter++ << endl;
