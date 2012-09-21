@@ -44,6 +44,16 @@ namespace
                             6,  -18, 0, 0,
                             0,    6, 0, 0);
     
+    const Matrix4f BERNINV(1,   1,   1, 1,
+                           0, 1/3, 2/3, 1,
+                           0,   0, 1/3, 1,
+                           0,   0,   0, 1);
+    
+    const Matrix4f BSP(1/6, -1/2, 1/2, -1/6,
+                       4/6,    0,  -1,  1/2,
+                       1,    1/2, 1/2, -1/2,
+                       0,      0,   0,  1/6);
+    
 }
     
 
@@ -72,6 +82,10 @@ Curve evalBezier( const vector< Vector3f >& P, unsigned steps )
     // Also note that you may assume that all Bezier curves that you
     // receive have G1 continuity.  Otherwise, the TNB will not be
     // be defined at points where this does not hold.
+    
+    // Premise: create a bezier curve for each chunk of 4 control points
+    // Then take steps samples from the curve by going at t increments of 1/steps
+    // make sure to normalize tangents/normals/binormals
     
     unsigned pieceCount = (P.size() - 4)/3 + 1;
     unsigned totalSampleCount = pieceCount * steps;
