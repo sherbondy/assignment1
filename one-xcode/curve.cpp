@@ -29,22 +29,22 @@ namespace
 
     // The Bernstein matrix and its cuddly derivatives wrt time.
     
-    const Matrix4f BERN(1, -3,  3, -1,
-                        0,  3, -6,  3,
-                        0,  0,  3, -3,
-                        0,  0,  0,  1);
+    const Matrix4f BEZ(1, -3,  3, -1,
+                       0,  3, -6,  3,
+                       0,  0,  3, -3,
+                       0,  0,  0,  1);
     
-    const Matrix4f DBERN(-3,   6, -3, 0,
-                          3, -12,  9, 0,
-                          0,   6, -9, 0,
-                          0,   0,  3, 0);
+    const Matrix4f DBEZ(-3,   6, -3, 0,
+                         3, -12,  9, 0,
+                         0,   6, -9, 0,
+                         0,   0,  3, 0);
     
-    const Matrix4f D2BERN(  6,   -6, 0, 0,
+    const Matrix4f D2_BEZ(  6,   -6, 0, 0,
                           -12,   18, 0, 0,
                             6,  -18, 0, 0,
                             0,    6, 0, 0);
     
-    const Matrix4f BERNINV(1,   1,   1, 1,
+    const Matrix4f BEZ_INV(1,   1,   1, 1,
                            0, 1/3, 2/3, 1,
                            0,   0, 1/3, 1,
                            0,   0,   0, 1);
@@ -53,7 +53,6 @@ namespace
                        4/6,    0,  -1,  1/2,
                        1,    1/2, 1/2, -1/2,
                        0,      0,   0,  1/6);
-    
 }
     
 
@@ -121,6 +120,11 @@ Curve evalBspline( const vector< Vector3f >& P, unsigned steps )
     // It is suggested that you implement this function by changing
     // basis from B-spline to Bezier.  That way, you can just call
     // your evalBezier function.
+    
+    // how do I chunk the control points to make suitable beziers?
+    
+    // multiply groups of 4 points by BSP*BEZ_INV to yield equivalent
+    // control points in bezier space.
 
     cerr << "\t>>> evalBSpline has been called with the following input:" << endl;
 
