@@ -118,7 +118,7 @@ Curve evalBezier( const vector< Vector3f >& P, unsigned steps )
         Matrix4f GdB = G * DBEZ; // to compute T
                 
         for (unsigned step = 0; step <= steps; step += 1) {
-            float t = (1.0/steps) * float(step);
+            float t = (1.f/steps) * step;
             Vector4f times(1, t, pow(t, 2), pow(t, 3));
             
             // We have to call .xyz() because we used a 4x4 matrix for
@@ -185,18 +185,21 @@ Curve evalBspline( const vector< Vector3f >& P, unsigned steps )
     cerr << "\t>>> Steps (type steps): " << steps << endl;
     
     vector< Vector3f > transformedPoints;
-    for (unsigned i = 0; i < (P.size() - 1); i += 3) {
+    for (unsigned i = 0; (i + 3) < P.size(); i += 1) {
         Matrix4f G = GforPAtIndex(P, i);
         
         Matrix4f GBezBspInv = G * BSP * BEZ_INV;
-        for (unsigned col = 0; col < 4; ++col) {
+        unsigned colstart = (i == 0) ? 0 : 1;
+        for (unsigned col = colstart; col < 4; ++col) {
             Vector3f transPoint = GBezBspInv.getCol(col).xyz();
             transformedPoints.push_back(transPoint);
         }
     }
     
+    cerr << "\t>>> Transformed Control points: " << transformedPoints.size() << endl;
+    
     Curve bspR = evalBezier(transformedPoints, steps);
-
+    
     // Return an empty curve right now.
     return bspR;
 }

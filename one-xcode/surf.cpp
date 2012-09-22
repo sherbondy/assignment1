@@ -9,11 +9,17 @@ namespace
     // flat on the xy-plane.  This is a check function.
     static bool checkFlat(const Curve &profile)
     {
-        for (unsigned i=0; i<profile.size(); i++)
+        for (unsigned i=0; i<profile.size(); i++) {
+            cerr <<   "Vz: " << profile[i].V[2]
+                 << ", Tz: " << profile[i].T[2]
+                 << ", Nz: " << profile[i].N[2] << endl;
+            
             if (profile[i].V[2] != 0.0 ||
                 profile[i].T[2] != 0.0 ||
-                profile[i].N[2] != 0.0)
+                profile[i].N[2] != 0.0) {
                 return false;
+            }
+        }
     
         return true;
     }
@@ -30,6 +36,7 @@ Surface makeSurfRev(const Curve &profile, unsigned steps)
     }
 
     // TODO: Here you should build the surface.  See surf.h for details.
+    
 
     cerr << "\t>>> makeSurfRev called (but not implemented).\n\t>>> Returning empty surface." << endl;
  
