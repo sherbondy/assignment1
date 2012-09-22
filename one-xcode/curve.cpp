@@ -45,16 +45,15 @@ namespace
                             6,  -18, 0, 0,
                             0,    6, 0, 0);
     
-    const Matrix4f BEZ_INV(1,   1,   1, 1,
-                           0, 1/3, 2/3, 1,
-                           0,   0, 1/3, 1,
-                           0,   0,   0, 1);
+    const Matrix4f BEZ_INV(1,     1,     1, 1,
+                           0, 1.f/3, 2.f/3, 1,
+                           0,     0, 1.f/3, 1,
+                           0,     0,     0, 1);
     
-
-    const Matrix4f BSP(1/6, -1/2, 1/2, -1/6,
-                       4/6,    0,  -1,  1/2,
-                       1,    1/2, 1/2, -1/2,
-                       0,      0,   0,  1/6);
+    const Matrix4f BSP(1.f/6, -1.f/2, 1.f/2, -1.f/6,
+                       2.f/3,      0,    -1,  1.f/2,
+                       1.f/6,  1.f/2, 1.f/2, -1.f/2,
+                       0,          0,     0,  1.f/6);
     
     Matrix4f GforPAtIndex(const vector < Vector3f >& P, unsigned i){
         Vector4f P1(P[i],   0);
@@ -97,9 +96,7 @@ Curve evalBezier( const vector< Vector3f >& P, unsigned steps )
     // Then take steps samples from the curve by going at t increments of 1/steps
     // make sure to normalize tangents/normals/binormals
     
-    unsigned pieceCount = (P.size() - 4)/3 + 1;
-    unsigned totalSampleCount = pieceCount * steps;
-    Curve R(totalSampleCount + 1);
+    Curve R;
 
     cerr << "\t>>> evalBezier has been called with the following input:" << endl;
 
@@ -120,7 +117,7 @@ Curve evalBezier( const vector< Vector3f >& P, unsigned steps )
         Matrix4f GB  = G * BEZ;  // to compute V
         Matrix4f GdB = G * DBEZ; // to compute T
                 
-        for (unsigned step = 0; step < steps; step += 1) {
+        for (unsigned step = 0; step <= steps; step += 1) {
             float t = (1.0/steps) * float(step);
             Vector4f times(1, t, pow(t, 2), pow(t, 3));
             
@@ -153,7 +150,6 @@ Curve evalBezier( const vector< Vector3f >& P, unsigned steps )
     }
 
     cerr << "\t>>> Steps (type steps): " << steps << endl;
-    cerr << "\t>>> Returning curve with " << totalSampleCount << " samples" << endl;
 
     return R;
 }
@@ -166,13 +162,19 @@ Curve evalBspline( const vector< Vector3f >& P, unsigned steps )
         cerr << "evalBspline must be called with 4 or more control points." << endl;
         exit( 0 );
     }
-    
-    Curve bspR(0);
+            
+    vector< Vector3f > transformedPoints;
+    for (unsigned i = 0; (i + 3) < P.size(); ++i) {
+        Matrix4f G = GforPAtIndex(P, i);
         
-//    vector< Vector3f > transformedPoints;
-//    for (unsigned i = 0; (i + 3) < P.size(); ++i) {
-//        
-//    }
+        Matrix4f GBezBspInv = G * BSP * BEZ_INV;
+        for (unsigned col = 0; col < 4; ++col) {
+            Vector3f transPoint = GBezBspInv.getCol(col).xyz();
+            transformedPoints.push_back(transPoint);
+        }
+    }
+    
+    Curve bspR = evalBezier(transformedPoints, steps);
 
     // TODO:
     // It is suggested that you implement this function by changing
