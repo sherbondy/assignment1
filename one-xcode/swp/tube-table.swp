@@ -1,0 +1,45 @@
+bsp3 uloop 30 8
+[0 2 -2]
+[2 2 -2]
+[2 5 -2]
+[2 5 2]
+[-2 5 2]
+[-2 5 -2]
+[-2 2 -2]
+[0 2 -2]
+
+bsp3 dloop 30 8
+[0 -2 -2]
+[2 -2 -2]
+[2 -5 -2]
+[2 -5 2]
+[-2 -5 2]
+[-2 -5 -2]
+[-2 -2 -2]
+[0 -2 -2]
+
+bez2 bowl 20 4
+[-1 1]
+[-1 0.5]
+[-1 0]
+[0 0]
+
+bez2 bowlin 20 4
+[0 0]
+[-1 0]
+[-1 0.5]
+[-1 1]
+
+circ little 30 0
+
+circ round 60 3
+
+circ profile 30 0.5
+
+gcyl . profile uloop
+gcyl . profile dloop
+
+gcyl . profile round
+
+gcyl . bowl little
+gcyl . bowlin little

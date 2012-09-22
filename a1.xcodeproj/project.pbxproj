@@ -41,6 +41,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3E37AB79160E3A0500B17616 /* tube-table.swp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "tube-table.swp"; sourceTree = "<group>"; };
 		3E7E9F04160D91EF003231E4 /* dragonfly.swp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dragonfly.swp; sourceTree = "<group>"; };
 		3EE40CA6160D040700531768 /* a1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = a1; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EE40CB7160D04A900531768 /* camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = camera.cpp; sourceTree = "<group>"; };
@@ -129,6 +130,7 @@
 			children = (
 				3EE40CEF160D04E900531768 /* circles.swp */,
 				3EE40CF0160D04E900531768 /* core.swp */,
+				3E37AB79160E3A0500B17616 /* tube-table.swp */,
 				3E7E9F04160D91EF003231E4 /* dragonfly.swp */,
 				3EE40CF1160D04E900531768 /* flircle.swp */,
 				3EE40CF2160D04E900531768 /* florus.swp */,
