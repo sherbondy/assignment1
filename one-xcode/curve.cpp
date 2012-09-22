@@ -39,6 +39,7 @@ namespace
                          0,   6, -9, 0,
                          0,   0,  3, 0);
     
+    // not actually used in this assignment
     const Matrix4f D2_BEZ(  6,   -6, 0, 0,
                           -12,   18, 0, 0,
                             6,  -18, 0, 0,
@@ -54,8 +55,17 @@ namespace
                        4/6,    0,  -1,  1/2,
                        1,    1/2, 1/2, -1/2,
                        0,      0,   0,  1/6);
-}
     
+    Matrix4f GforPAtIndex(const vector < Vector3f >& P, unsigned i){
+        Vector4f P1(P[i],   0);
+        Vector4f P2(P[i+1], 0);
+        Vector4f P3(P[i+2], 0);
+        Vector4f P4(P[i+3], 0);
+        
+        Matrix4f G = Matrix4f(P1, P2, P3, P4, true);
+        return G;
+    }
+}
 
 Curve evalBezier( const vector< Vector3f >& P, unsigned steps )
 {
@@ -105,12 +115,7 @@ Curve evalBezier( const vector< Vector3f >& P, unsigned steps )
         
         // setting the columns here
         // appending 0s to the point ends to let us make a 4x4 matrix
-        Vector4f P1(P[i],   0);
-        Vector4f P2(P[i+1], 0);
-        Vector4f P3(P[i+2], 0);
-        Vector4f P4(P[i+3], 0);
-        
-        Matrix4f G = Matrix4f(P1, P2, P3, P4, true);
+        Matrix4f G = GforPAtIndex(P, i);
         
         Matrix4f GB  = G * BEZ;  // to compute V
         Matrix4f GdB = G * DBEZ; // to compute T
@@ -125,6 +130,7 @@ Curve evalBezier( const vector< Vector3f >& P, unsigned steps )
             Vector3f T = (GdB * times).xyz().normalized();
             
             Vector3f N, B;
+            
             if (step == 0) {
                 // arbitrarily set B to the forward vector
                 B = Vector3f::FORWARD;
@@ -161,14 +167,20 @@ Curve evalBspline( const vector< Vector3f >& P, unsigned steps )
         exit( 0 );
     }
     
-    Curve bspR(steps + 1);
+    Curve bspR(0);
+        
+//    vector< Vector3f > transformedPoints;
+//    for (unsigned i = 0; (i + 3) < P.size(); ++i) {
+//        
+//    }
 
     // TODO:
     // It is suggested that you implement this function by changing
     // basis from B-spline to Bezier.  That way, you can just call
     // your evalBezier function.
     
-    // how do I chunk the control points to make suitable beziers?
+    // Q: how do I chunk the control points to make suitable beziers?
+    // A: take 4, shift 1, take 4, shift 1, until your reach the end.
     
     // multiply groups of 4 points by BSP*BEZ_INV to yield equivalent
     // control points in bezier space.
