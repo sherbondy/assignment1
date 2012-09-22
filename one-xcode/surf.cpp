@@ -10,10 +10,6 @@ namespace
     static bool checkFlat(const Curve &profile)
     {
         for (unsigned i=0; i<profile.size(); i++) {
-            cerr <<   "Vz: " << profile[i].V[2]
-                 << ", Tz: " << profile[i].T[2]
-                 << ", Nz: " << profile[i].N[2] << endl;
-            
             if (profile[i].V[2] != 0.0 ||
                 profile[i].T[2] != 0.0 ||
                 profile[i].N[2] != 0.0) {
@@ -36,6 +32,40 @@ Surface makeSurfRev(const Curve &profile, unsigned steps)
     }
 
     // TODO: Here you should build the surface.  See surf.h for details.
+    // idea: copy profile, transformed over and over by increment of rotation matrix.
+    // faces: curve point 0, same curve point 1, adjacent curve point 0.
+    //   and: curve point 1, adjacent curve point 1, adjacent curve point 0.
+    // If I try making my own surfaces, always put profile on left of y-axis (make all x-coords -)
+    
+    // RotateY(radians) * CurvePoint.V, do for each point in profile, radians = 2pi/steps
+    
+    // first iteration: establish the vectors and normals
+    unsigned profileSize = profile.size();
+    
+    for (unsigned step = 0; step < steps; step++) {
+        float rotation = 2 * M_PI * step / steps;
+        Matrix3f MRotY = Matrix3f::rotateY(rotation);
+        
+        for (unsigned i = 0; i < profileSize; ++i) {
+            CurvePoint point = profile[i];
+            
+            Vector3f Vrot = MRotY * point.V;
+            Vector3f Nrot = MRotY * point.N;
+            // usually want to rotate by (M^-1)^T for Normal transformations,
+            // but this is identical to M for rotation matrices.
+            surface.VV.push_back(Vrot);
+            surface.VN.push_back(Nrot);
+            
+            unsigned vIndex     = step*profileSize + i;
+            // make sure next loops back to zero if you're on the last surface
+            unsigned nextVIndex = (vIndex + profileSize) % (steps * profileSize);
+            
+            Tup3u face1(vIndex, vIndex + 1, nextVIndex);
+            Tup3u face2(vIndex + 1, nextVIndex + 1, nextVIndex);
+            surface.VF.push_back(face1);
+            surface.VF.push_back(face2);
+        }
+    }
     
 
     cerr << "\t>>> makeSurfRev called (but not implemented).\n\t>>> Returning empty surface." << endl;
