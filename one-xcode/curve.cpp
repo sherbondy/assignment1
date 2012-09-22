@@ -162,19 +162,6 @@ Curve evalBspline( const vector< Vector3f >& P, unsigned steps )
         cerr << "evalBspline must be called with 4 or more control points." << endl;
         exit( 0 );
     }
-            
-    vector< Vector3f > transformedPoints;
-    for (unsigned i = 0; (i + 3) < P.size(); ++i) {
-        Matrix4f G = GforPAtIndex(P, i);
-        
-        Matrix4f GBezBspInv = G * BSP * BEZ_INV;
-        for (unsigned col = 0; col < 4; ++col) {
-            Vector3f transPoint = GBezBspInv.getCol(col).xyz();
-            transformedPoints.push_back(transPoint);
-        }
-    }
-    
-    Curve bspR = evalBezier(transformedPoints, steps);
 
     // TODO:
     // It is suggested that you implement this function by changing
@@ -189,14 +176,26 @@ Curve evalBspline( const vector< Vector3f >& P, unsigned steps )
 
     cerr << "\t>>> evalBSpline has been called with the following input:" << endl;
 
-    cerr << "\t>>> Control points (type vector< Vector3f >): "<< endl;
+    cerr << "\t>>> Control points (type vector< Vector3f >): " << P.size() << endl;
     for( unsigned i = 0; i < P.size(); ++i )
     {
         P[i].print();
     }
 
     cerr << "\t>>> Steps (type steps): " << steps << endl;
-    cerr << "\t>>> Returning empty curve." << endl;
+    
+    vector< Vector3f > transformedPoints;
+    for (unsigned i = 0; i < (P.size() - 1); i += 3) {
+        Matrix4f G = GforPAtIndex(P, i);
+        
+        Matrix4f GBezBspInv = G * BSP * BEZ_INV;
+        for (unsigned col = 0; col < 4; ++col) {
+            Vector3f transPoint = GBezBspInv.getCol(col).xyz();
+            transformedPoints.push_back(transPoint);
+        }
+    }
+    
+    Curve bspR = evalBezier(transformedPoints, steps);
 
     // Return an empty curve right now.
     return bspR;

@@ -463,8 +463,6 @@ int main( int argc, char* argv[] )
     
     glutCreateWindow("Assignment 1");
 
-    cout << "Sanity check1.";
-
     // Initialize OpenGL parameters.
     initRendering();
 
@@ -482,8 +480,6 @@ int main( int argc, char* argv[] )
 
     // Call this whenever window needs redrawing
     glutDisplayFunc( drawScene );
-
-    cout << "Sanity check2.";
 
     // Trigger timerFunc every 20 msec
     //  glutTimerFunc(20, timerFunc, 0);
