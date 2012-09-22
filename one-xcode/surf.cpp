@@ -21,6 +21,37 @@ namespace
     }
 }
 
+void addFacesToSurface(Surface& surface, unsigned i, unsigned step,
+                       unsigned steps, unsigned profileSize) {
+    // do not create additional triangles once we're at the bottom of the curve
+    if ( i + 1 != profileSize) {
+        unsigned vIndex     = step*profileSize + i;
+        // make sure next loops back to zero if you're on the last segment
+        unsigned nextVIndex = (vIndex + profileSize) % (steps * profileSize);
+        
+        Tup3u face1(vIndex, vIndex + 1, nextVIndex);
+        Tup3u face2(vIndex + 1, nextVIndex + 1, nextVIndex);
+        surface.VF.push_back(face1);
+        surface.VF.push_back(face2);
+    }
+}
+
+void sweepProfile(const Curve &profile, unsigned profileSize, unsigned step,
+                  unsigned steps, Surface &surface, Matrix4f transform) {
+    Matrix4f transformInvT = transform.inverse().transposed();
+    
+    for (unsigned i = 0; i < profileSize; ++i) {
+        CurvePoint profilePoint = profile[i];
+        Vector3f vertexT = (transform * Vector4f(profilePoint.V, 1)).xyz();
+        // now the inverse transpose bit actually matters for drawing normals
+        Vector3f normalT = (transformInvT * Vector4f(profilePoint.N, 1)).xyz().normalized();
+        surface.VV.push_back(vertexT);
+        surface.VN.push_back(normalT);
+        
+        addFacesToSurface(surface, i, step, steps, profileSize);
+    }
+}
+
 Surface makeSurfRev(const Curve &profile, unsigned steps)
 {
     Surface surface;
@@ -31,7 +62,6 @@ Surface makeSurfRev(const Curve &profile, unsigned steps)
         exit(0);
     }
 
-    // TODO: Here you should build the surface.  See surf.h for details.
     // idea: copy profile, transformed over and over by increment of rotation matrix.
     // faces: curve point 0, same curve point 1, adjacent curve point 0.
     //   and: curve point 1, adjacent curve point 1, adjacent curve point 0.
@@ -44,30 +74,9 @@ Surface makeSurfRev(const Curve &profile, unsigned steps)
     
     for (unsigned step = 0; step < steps; step++) {
         float rotation = 2 * M_PI * step / steps;
-        Matrix3f MRotY = Matrix3f::rotateY(rotation);
+        Matrix4f MRotY = Matrix4f::rotateY(rotation);
         
-        for (unsigned i = 0; i < profileSize; ++i) {
-            CurvePoint point = profile[i];
-            
-            Vector3f Vrot = MRotY * point.V;
-            Vector3f Nrot = (MRotY * point.N).normalized();
-            // usually want to rotate by (M^-1)^T for Normal transformations,
-            // but this is identical to M for rotation matrices.
-            surface.VV.push_back(Vrot);
-            surface.VN.push_back(Nrot);
-            
-            // do not create additional triangles once we're at the bottom of the curve
-            if ( i + 1 != profileSize) {
-                unsigned vIndex     = step*profileSize + i;
-                // make sure next loops back to zero if you're on the last surface
-                unsigned nextVIndex = (vIndex + profileSize) % (steps * profileSize);
-                
-                Tup3u face1(vIndex, vIndex + 1, nextVIndex);
-                Tup3u face2(vIndex + 1, nextVIndex + 1, nextVIndex);
-                surface.VF.push_back(face1);
-                surface.VF.push_back(face2);
-            }
-        }
+        sweepProfile(profile, profileSize, step, steps, surface, MRotY);
     }
      
     return surface;
@@ -83,10 +92,21 @@ Surface makeGenCyl(const Curve &profile, const Curve &sweep )
         exit(0);
     }
 
-    // TODO: Here you should build the surface.  See surf.h for details.
+    unsigned sweepSize   = sweep.size();
+    unsigned profileSize = profile.size();
 
-    cerr << "\t>>> makeGenCyl called (but not implemented).\n\t>>> Returning empty surface." <<endl;
-
+    for (unsigned step = 0; step < sweepSize; ++step) {
+        CurvePoint point = sweep[step];
+        // column-wise specification of the transformation
+        Matrix4f transform(Vector4f(point.N, 0),
+                           Vector4f(point.B, 0),
+                           Vector4f(point.T, 0),
+                           Vector4f(point.V, 1),
+                           true);
+                
+        sweepProfile(profile, profileSize, step, sweepSize, surface, transform);
+    }
+    
     return surface;
 }
 

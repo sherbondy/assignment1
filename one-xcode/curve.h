@@ -13,7 +13,7 @@ struct CurvePoint
 {
     Vector3f V; // Vertex
     Vector3f T; // Tangent  (unit) : first derivative
-    Vector3f N; // Normal   (unit) :
+    Vector3f N; // Normal   (unit) : BxT
     Vector3f B; // Binormal (unit) // (B) aka the cotangent vector
 };
 
