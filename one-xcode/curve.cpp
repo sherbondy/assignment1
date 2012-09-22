@@ -66,31 +66,19 @@ namespace
     }
 }
 
+// Returns a Curve (e.g., a vector< CurvePoint >).
+// P:     a vector of control points (expected size: 3n + 1, n = 0, 1, ...)
+//        The curve represented by P must have G1 continuity for TNB to be defined.
+// steps: the number of points to generate on each piece of the spline.
 Curve evalBezier( const vector< Vector3f >& P, unsigned steps )
 {
     // Check
-    if( P.size() < 4 || P.size() % 3 != 1 )
-    {
+    if( P.size() < 4 || P.size() % 3 != 1 ) {
         cerr << "evalBezier must be called with 3n+1 control points." << endl;
         exit( 0 );
     }
-
-    // TODO:
-    // You should implement this function so that it returns a Curve
-    // (e.g., a vector< CurvePoint >).  The variable "steps" tells you
-    // the number of points to generate on each piece of the spline.
-    // At least, that's how the sample solution is implemented and how
-    // the SWP files are written.  But you are free to interpret this
-    // variable however you want, so long as you can control the
-    // "resolution" of the discretized spline curve with it.
-
-    // Make sure that this function computes all the appropriate
-    // Vector3fs for each CurvePoint: V,T,N,B.
+    
     // [NBT] should be unit and orthogonal.
-
-    // Also note that you may assume that all Bezier curves that you
-    // receive have G1 continuity.  Otherwise, the TNB will not be
-    // be defined at points where this does not hold.
     
     // Premise: create a bezier curve for each chunk of 4 control points
     // Then take steps samples from the curve by going at t increments of 1/steps
@@ -101,8 +89,7 @@ Curve evalBezier( const vector< Vector3f >& P, unsigned steps )
     cerr << "\t>>> evalBezier has been called with the following input:" << endl;
 
     cerr << "\t>>> Control points (type vector< Vector3f >): "<< endl;
-    for( unsigned i = 0; i < P.size(); ++i )
-    {
+    for( unsigned i = 0; i < P.size(); ++i ) {
         P[i].print();
     }
     
@@ -148,7 +135,7 @@ Curve evalBezier( const vector< Vector3f >& P, unsigned steps )
             R.push_back(newPoint);
         }
     }
-
+    
     cerr << "\t>>> Steps (type steps): " << steps << endl;
 
     return R;
@@ -163,22 +150,15 @@ Curve evalBspline( const vector< Vector3f >& P, unsigned steps )
         exit( 0 );
     }
 
-    // TODO:
-    // It is suggested that you implement this function by changing
-    // basis from B-spline to Bezier.  That way, you can just call
-    // your evalBezier function.
-    
     // Q: how do I chunk the control points to make suitable beziers?
     // A: take 4, shift 1, take 4, shift 1, until your reach the end.
     
     // multiply groups of 4 points by BSP*BEZ_INV to yield equivalent
-    // control points in bezier space.
+    // control points in Bernstein space.
 
     cerr << "\t>>> evalBSpline has been called with the following input:" << endl;
-
     cerr << "\t>>> Control points (type vector< Vector3f >): " << P.size() << endl;
-    for( unsigned i = 0; i < P.size(); ++i )
-    {
+    for( unsigned i = 0; i < P.size(); ++i ) {
         P[i].print();
     }
 
@@ -198,9 +178,7 @@ Curve evalBspline( const vector< Vector3f >& P, unsigned steps )
     
     cerr << "\t>>> Transformed Control points: " << transformedPoints.size() << endl;
     
-    Curve bspR = evalBezier(transformedPoints, steps);
-    
-    // Return an empty curve right now.
+    Curve bspR = evalBezier(transformedPoints, steps);    
     return bspR;
 }
 

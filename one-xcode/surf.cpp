@@ -56,7 +56,7 @@ Surface makeSurfRev(const Curve &profile, unsigned steps)
             surface.VV.push_back(Vrot);
             surface.VN.push_back(Nrot);
             
-            // do not let bottom wrap around top
+            // do not create additional triangles once we're at the bottom of the curve
             if ( i + 1 != profileSize) {
                 unsigned vIndex     = step*profileSize + i;
                 // make sure next loops back to zero if you're on the last surface
@@ -69,10 +69,7 @@ Surface makeSurfRev(const Curve &profile, unsigned steps)
             }
         }
     }
-    
-
-    cerr << "\t>>> makeSurfRev called (but not implemented).\n\t>>> Returning empty surface." << endl;
- 
+     
     return surface;
 }
 
