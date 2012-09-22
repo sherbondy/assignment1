@@ -22,7 +22,8 @@ namespace
 }
 
 void addFacesToSurface(Surface& surface, unsigned i, unsigned step,
-                       unsigned steps, unsigned profileSize) {
+                       unsigned steps, unsigned profileSize)
+{
     // do not create additional triangles once we're at the bottom of the curve
     if ( i + 1 != profileSize) {
         unsigned vIndex     = step*profileSize + i;
@@ -37,14 +38,22 @@ void addFacesToSurface(Surface& surface, unsigned i, unsigned step,
 }
 
 void sweepProfile(const Curve &profile, unsigned profileSize, unsigned step,
-                  unsigned steps, Surface &surface, Matrix4f transform) {
+                  unsigned steps, Surface &surface, Matrix4f transform)
+{
     Matrix4f transformInvT = transform.inverse().transposed();
     
     for (unsigned i = 0; i < profileSize; ++i) {
         CurvePoint profilePoint = profile[i];
+        Vector3f profileB = profilePoint.B;
+        
         Vector3f vertexT = (transform * Vector4f(profilePoint.V, 1)).xyz();
         // now the inverse transpose bit actually matters for drawing normals
         Vector3f normalT = (transformInvT * Vector4f(profilePoint.N, 1)).xyz().normalized();
+        // guarantee that the normal is pointing outwards
+        if (profileB.z() > 0) {
+            normalT *= -1;
+        }
+        
         surface.VV.push_back(vertexT);
         surface.VN.push_back(normalT);
         
