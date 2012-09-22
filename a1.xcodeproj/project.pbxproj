@@ -78,6 +78,7 @@
 		3E37ABAA160E450F00B17616 /* Vector2f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector2f.h; sourceTree = "<group>"; };
 		3E37ABAB160E450F00B17616 /* Vector3f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector3f.h; sourceTree = "<group>"; };
 		3E37ABAC160E450F00B17616 /* Vector4f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector4f.h; sourceTree = "<group>"; };
+		3E37ABB0160E462E00B17616 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		3EE40CA6160D040700531768 /* a1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = a1; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EE40D24160D05D100531768 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		3EE40D26160D05D500531768 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -143,6 +144,7 @@
 		3EE40C9B160D040700531768 = {
 			isa = PBXGroup;
 			children = (
+				3E37ABB0160E462E00B17616 /* README.txt */,
 				3E37AB7A160E44E900B17616 /* camera.cpp */,
 				3E37AB7B160E44E900B17616 /* camera.h */,
 				3E37AB7C160E44E900B17616 /* curve.cpp */,
