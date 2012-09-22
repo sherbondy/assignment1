@@ -50,20 +50,23 @@ Surface makeSurfRev(const Curve &profile, unsigned steps)
             CurvePoint point = profile[i];
             
             Vector3f Vrot = MRotY * point.V;
-            Vector3f Nrot = MRotY * point.N;
+            Vector3f Nrot = (MRotY * point.N).normalized();
             // usually want to rotate by (M^-1)^T for Normal transformations,
             // but this is identical to M for rotation matrices.
             surface.VV.push_back(Vrot);
             surface.VN.push_back(Nrot);
             
-            unsigned vIndex     = step*profileSize + i;
-            // make sure next loops back to zero if you're on the last surface
-            unsigned nextVIndex = (vIndex + profileSize) % (steps * profileSize);
-            
-            Tup3u face1(vIndex, vIndex + 1, nextVIndex);
-            Tup3u face2(vIndex + 1, nextVIndex + 1, nextVIndex);
-            surface.VF.push_back(face1);
-            surface.VF.push_back(face2);
+            // do not let bottom wrap around top
+            if ( i + 1 != profileSize) {
+                unsigned vIndex     = step*profileSize + i;
+                // make sure next loops back to zero if you're on the last surface
+                unsigned nextVIndex = (vIndex + profileSize) % (steps * profileSize);
+                
+                Tup3u face1(vIndex, vIndex + 1, nextVIndex);
+                Tup3u face2(vIndex + 1, nextVIndex + 1, nextVIndex);
+                surface.VF.push_back(face1);
+                surface.VF.push_back(face2);
+            }
         }
     }
     
