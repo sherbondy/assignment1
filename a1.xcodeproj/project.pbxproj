@@ -41,6 +41,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3E7E9F04160D91EF003231E4 /* dragonfly.swp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dragonfly.swp; sourceTree = "<group>"; };
 		3EE40CA6160D040700531768 /* a1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = a1; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EE40CB7160D04A900531768 /* camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = camera.cpp; sourceTree = "<group>"; };
 		3EE40CB8160D04A900531768 /* camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
@@ -67,7 +68,7 @@
 		3EE40D24160D05D100531768 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		3EE40D26160D05D500531768 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		3EE40D2A160D061800531768 /* libvecmath.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libvecmath.a; path = "one-xcode/vecmath/lib/libvecmath.a"; sourceTree = "<group>"; };
-		3EE40D40160D06DB00531768 /* include */ = {isa = PBXFileReference; lastKnownFileType = file; name = include; path = "one-xcode/vecmath/include"; sourceTree = "<group>"; };
+		3EE40D40160D06DB00531768 /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; name = include; path = "one-xcode/vecmath/include"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +129,7 @@
 			children = (
 				3EE40CEF160D04E900531768 /* circles.swp */,
 				3EE40CF0160D04E900531768 /* core.swp */,
+				3E7E9F04160D91EF003231E4 /* dragonfly.swp */,
 				3EE40CF1160D04E900531768 /* flircle.swp */,
 				3EE40CF2160D04E900531768 /* florus.swp */,
 				3EE40CF3160D04E900531768 /* gentorus.swp */,
