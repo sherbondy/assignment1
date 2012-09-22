@@ -7,21 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3EE40CC4160D04A900531768 /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3EE40CB7160D04A900531768 /* camera.cpp */; };
-		3EE40CC5160D04A900531768 /* curve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3EE40CB9160D04A900531768 /* curve.cpp */; };
-		3EE40CC6160D04A900531768 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3EE40CBC160D04A900531768 /* main.cpp */; };
-		3EE40CC8160D04A900531768 /* parse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3EE40CBF160D04A900531768 /* parse.cpp */; };
-		3EE40CC9160D04A900531768 /* surf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3EE40CC1160D04A900531768 /* surf.cpp */; };
+		3E37AB85160E44E900B17616 /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E37AB7A160E44E900B17616 /* camera.cpp */; };
+		3E37AB86160E44E900B17616 /* camera.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E37AB7B160E44E900B17616 /* camera.h */; };
+		3E37AB87160E44E900B17616 /* curve.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E37AB7C160E44E900B17616 /* curve.cpp */; };
+		3E37AB88160E44E900B17616 /* curve.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E37AB7D160E44E900B17616 /* curve.h */; };
+		3E37AB89160E44E900B17616 /* extra.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E37AB7E160E44E900B17616 /* extra.h */; };
+		3E37AB8A160E44E900B17616 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E37AB7F160E44E900B17616 /* main.cpp */; };
+		3E37AB8B160E44E900B17616 /* parse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E37AB80160E44E900B17616 /* parse.cpp */; };
+		3E37AB8C160E44E900B17616 /* parse.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E37AB81160E44E900B17616 /* parse.h */; };
+		3E37AB8D160E44E900B17616 /* surf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E37AB82160E44E900B17616 /* surf.cpp */; };
+		3E37AB8E160E44E900B17616 /* surf.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E37AB83160E44E900B17616 /* surf.h */; };
+		3E37AB8F160E44E900B17616 /* tuple.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E37AB84160E44E900B17616 /* tuple.h */; };
 		3EE40D25160D05D100531768 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE40D24160D05D100531768 /* GLUT.framework */; };
 		3EE40D27160D05D500531768 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE40D26160D05D500531768 /* OpenGL.framework */; };
 		3EE40D2B160D061800531768 /* libvecmath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE40D2A160D061800531768 /* libvecmath.a */; };
-		3EE40D52160D073E00531768 /* include in Headers */ = {isa = PBXBuildFile; fileRef = 3EE40D40160D06DB00531768 /* include */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3EE40D2D160D068300531768 /* PBXContainerItemProxy */ = {
+		3E37ABAD160E453800B17616 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3EE40D20160D04FA00531768 /* vecmath 3.xcodeproj */;
+			containerPortal = 3E37AB9D160E44F700B17616 /* vecmath 3.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 3EE40D00160D04FA00531768;
 			remoteInfo = vecmath;
@@ -41,35 +46,42 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3E37AB79160E3A0500B17616 /* tube-table.swp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "tube-table.swp"; sourceTree = "<group>"; };
-		3E7E9F04160D91EF003231E4 /* dragonfly.swp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dragonfly.swp; sourceTree = "<group>"; };
+		3E37AB7A160E44E900B17616 /* camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = camera.cpp; sourceTree = "<group>"; };
+		3E37AB7B160E44E900B17616 /* camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
+		3E37AB7C160E44E900B17616 /* curve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = curve.cpp; sourceTree = "<group>"; };
+		3E37AB7D160E44E900B17616 /* curve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = curve.h; sourceTree = "<group>"; };
+		3E37AB7E160E44E900B17616 /* extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = extra.h; sourceTree = "<group>"; };
+		3E37AB7F160E44E900B17616 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3E37AB80160E44E900B17616 /* parse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = parse.cpp; sourceTree = "<group>"; };
+		3E37AB81160E44E900B17616 /* parse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parse.h; sourceTree = "<group>"; };
+		3E37AB82160E44E900B17616 /* surf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = surf.cpp; sourceTree = "<group>"; };
+		3E37AB83160E44E900B17616 /* surf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = surf.h; sourceTree = "<group>"; };
+		3E37AB84160E44E900B17616 /* tuple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tuple.h; sourceTree = "<group>"; };
+		3E37AB91160E44F000B17616 /* circles.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = circles.swp; sourceTree = "<group>"; };
+		3E37AB92160E44F000B17616 /* core.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = core.swp; sourceTree = "<group>"; };
+		3E37AB93160E44F000B17616 /* dragonfly.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = dragonfly.swp; sourceTree = "<group>"; };
+		3E37AB94160E44F000B17616 /* flircle.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = flircle.swp; sourceTree = "<group>"; };
+		3E37AB95160E44F000B17616 /* florus.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = florus.swp; sourceTree = "<group>"; };
+		3E37AB96160E44F000B17616 /* gentorus.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = gentorus.swp; sourceTree = "<group>"; };
+		3E37AB97160E44F000B17616 /* norm.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = norm.swp; sourceTree = "<group>"; };
+		3E37AB98160E44F000B17616 /* tor.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = tor.swp; sourceTree = "<group>"; };
+		3E37AB99160E44F000B17616 /* tube-table.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = "tube-table.swp"; sourceTree = "<group>"; };
+		3E37AB9A160E44F000B17616 /* weird.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = weird.swp; sourceTree = "<group>"; };
+		3E37AB9B160E44F000B17616 /* weirder.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = weirder.swp; sourceTree = "<group>"; };
+		3E37AB9C160E44F000B17616 /* wineglass.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = wineglass.swp; sourceTree = "<group>"; };
+		3E37AB9D160E44F700B17616 /* vecmath 3.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "vecmath 3.xcodeproj"; path = "vecmath/vecmath 3.xcodeproj"; sourceTree = "<group>"; };
+		3E37ABA5160E450F00B17616 /* Matrix2f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Matrix2f.h; sourceTree = "<group>"; };
+		3E37ABA6160E450F00B17616 /* Matrix3f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Matrix3f.h; sourceTree = "<group>"; };
+		3E37ABA7160E450F00B17616 /* Matrix4f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Matrix4f.h; sourceTree = "<group>"; };
+		3E37ABA8160E450F00B17616 /* Quat4f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Quat4f.h; sourceTree = "<group>"; };
+		3E37ABA9160E450F00B17616 /* vecmath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vecmath.h; sourceTree = "<group>"; };
+		3E37ABAA160E450F00B17616 /* Vector2f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector2f.h; sourceTree = "<group>"; };
+		3E37ABAB160E450F00B17616 /* Vector3f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector3f.h; sourceTree = "<group>"; };
+		3E37ABAC160E450F00B17616 /* Vector4f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector4f.h; sourceTree = "<group>"; };
 		3EE40CA6160D040700531768 /* a1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = a1; sourceTree = BUILT_PRODUCTS_DIR; };
-		3EE40CB7160D04A900531768 /* camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = camera.cpp; sourceTree = "<group>"; };
-		3EE40CB8160D04A900531768 /* camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
-		3EE40CB9160D04A900531768 /* curve.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = curve.cpp; sourceTree = "<group>"; };
-		3EE40CBA160D04A900531768 /* curve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = curve.h; sourceTree = "<group>"; };
-		3EE40CBB160D04A900531768 /* extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = extra.h; sourceTree = "<group>"; };
-		3EE40CBC160D04A900531768 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		3EE40CBF160D04A900531768 /* parse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = parse.cpp; sourceTree = "<group>"; };
-		3EE40CC0160D04A900531768 /* parse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parse.h; sourceTree = "<group>"; };
-		3EE40CC1160D04A900531768 /* surf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = surf.cpp; sourceTree = "<group>"; };
-		3EE40CC2160D04A900531768 /* surf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = surf.h; sourceTree = "<group>"; };
-		3EE40CC3160D04A900531768 /* tuple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tuple.h; sourceTree = "<group>"; };
-		3EE40CEF160D04E900531768 /* circles.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = circles.swp; sourceTree = "<group>"; };
-		3EE40CF0160D04E900531768 /* core.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = core.swp; sourceTree = "<group>"; };
-		3EE40CF1160D04E900531768 /* flircle.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = flircle.swp; sourceTree = "<group>"; };
-		3EE40CF2160D04E900531768 /* florus.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = florus.swp; sourceTree = "<group>"; };
-		3EE40CF3160D04E900531768 /* gentorus.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = gentorus.swp; sourceTree = "<group>"; };
-		3EE40CF4160D04E900531768 /* norm.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = norm.swp; sourceTree = "<group>"; };
-		3EE40CF5160D04E900531768 /* tor.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = tor.swp; sourceTree = "<group>"; };
-		3EE40CF6160D04E900531768 /* weird.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = weird.swp; sourceTree = "<group>"; };
-		3EE40CF7160D04E900531768 /* weirder.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = weirder.swp; sourceTree = "<group>"; };
-		3EE40CF8160D04E900531768 /* wineglass.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = wineglass.swp; sourceTree = "<group>"; };
-		3EE40D20160D04FA00531768 /* vecmath 3.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "vecmath 3.xcodeproj"; path = "one-xcode/vecmath/vecmath 3.xcodeproj"; sourceTree = "<group>"; };
 		3EE40D24160D05D100531768 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		3EE40D26160D05D500531768 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		3EE40D2A160D061800531768 /* libvecmath.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libvecmath.a; path = "one-xcode/vecmath/lib/libvecmath.a"; sourceTree = "<group>"; };
-		3EE40D40160D06DB00531768 /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; name = include; path = "one-xcode/vecmath/include"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,13 +98,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E37AB90160E44F000B17616 /* swp */ = {
+			isa = PBXGroup;
+			children = (
+				3E37AB91160E44F000B17616 /* circles.swp */,
+				3E37AB92160E44F000B17616 /* core.swp */,
+				3E37AB93160E44F000B17616 /* dragonfly.swp */,
+				3E37AB94160E44F000B17616 /* flircle.swp */,
+				3E37AB95160E44F000B17616 /* florus.swp */,
+				3E37AB96160E44F000B17616 /* gentorus.swp */,
+				3E37AB97160E44F000B17616 /* norm.swp */,
+				3E37AB98160E44F000B17616 /* tor.swp */,
+				3E37AB99160E44F000B17616 /* tube-table.swp */,
+				3E37AB9A160E44F000B17616 /* weird.swp */,
+				3E37AB9B160E44F000B17616 /* weirder.swp */,
+				3E37AB9C160E44F000B17616 /* wineglass.swp */,
+			);
+			path = swp;
+			sourceTree = "<group>";
+		};
+		3E37AB9E160E44F700B17616 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3E37ABA4160E450F00B17616 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				3E37ABA5160E450F00B17616 /* Matrix2f.h */,
+				3E37ABA6160E450F00B17616 /* Matrix3f.h */,
+				3E37ABA7160E450F00B17616 /* Matrix4f.h */,
+				3E37ABA8160E450F00B17616 /* Quat4f.h */,
+				3E37ABA9160E450F00B17616 /* vecmath.h */,
+				3E37ABAA160E450F00B17616 /* Vector2f.h */,
+				3E37ABAB160E450F00B17616 /* Vector3f.h */,
+				3E37ABAC160E450F00B17616 /* Vector4f.h */,
+			);
+			name = include;
+			path = vecmath/include;
+			sourceTree = "<group>";
+		};
 		3EE40C9B160D040700531768 = {
 			isa = PBXGroup;
 			children = (
-				3EE40CA9160D040700531768 /* a1 */,
+				3E37AB7A160E44E900B17616 /* camera.cpp */,
+				3E37AB7B160E44E900B17616 /* camera.h */,
+				3E37AB7C160E44E900B17616 /* curve.cpp */,
+				3E37AB7D160E44E900B17616 /* curve.h */,
+				3E37AB7E160E44E900B17616 /* extra.h */,
+				3E37AB7F160E44E900B17616 /* main.cpp */,
+				3E37AB80160E44E900B17616 /* parse.cpp */,
+				3E37AB81160E44E900B17616 /* parse.h */,
+				3E37AB82160E44E900B17616 /* surf.cpp */,
+				3E37AB83160E44E900B17616 /* surf.h */,
+				3E37AB84160E44E900B17616 /* tuple.h */,
+				3E37AB90160E44F000B17616 /* swp */,
 				3EE40D2C160D062000531768 /* frameworks */,
-				3EE40D40160D06DB00531768 /* include */,
-				3EE40D20160D04FA00531768 /* vecmath 3.xcodeproj */,
+				3E37ABA4160E450F00B17616 /* include */,
+				3E37AB9D160E44F700B17616 /* vecmath 3.xcodeproj */,
 				3EE40CA7160D040700531768 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,52 +166,6 @@
 			isa = PBXGroup;
 			children = (
 				3EE40CA6160D040700531768 /* a1 */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		3EE40CA9160D040700531768 /* a1 */ = {
-			isa = PBXGroup;
-			children = (
-				3EE40CB7160D04A900531768 /* camera.cpp */,
-				3EE40CB8160D04A900531768 /* camera.h */,
-				3EE40CB9160D04A900531768 /* curve.cpp */,
-				3EE40CBA160D04A900531768 /* curve.h */,
-				3EE40CBB160D04A900531768 /* extra.h */,
-				3EE40CBC160D04A900531768 /* main.cpp */,
-				3EE40CBF160D04A900531768 /* parse.cpp */,
-				3EE40CC0160D04A900531768 /* parse.h */,
-				3EE40CC1160D04A900531768 /* surf.cpp */,
-				3EE40CC2160D04A900531768 /* surf.h */,
-				3EE40CC3160D04A900531768 /* tuple.h */,
-				3EE40CEE160D04E900531768 /* swp */,
-			);
-			name = a1;
-			path = "one-xcode";
-			sourceTree = "<group>";
-		};
-		3EE40CEE160D04E900531768 /* swp */ = {
-			isa = PBXGroup;
-			children = (
-				3EE40CEF160D04E900531768 /* circles.swp */,
-				3EE40CF0160D04E900531768 /* core.swp */,
-				3E37AB79160E3A0500B17616 /* tube-table.swp */,
-				3E7E9F04160D91EF003231E4 /* dragonfly.swp */,
-				3EE40CF1160D04E900531768 /* flircle.swp */,
-				3EE40CF2160D04E900531768 /* florus.swp */,
-				3EE40CF3160D04E900531768 /* gentorus.swp */,
-				3EE40CF4160D04E900531768 /* norm.swp */,
-				3EE40CF5160D04E900531768 /* tor.swp */,
-				3EE40CF6160D04E900531768 /* weird.swp */,
-				3EE40CF7160D04E900531768 /* weirder.swp */,
-				3EE40CF8160D04E900531768 /* wineglass.swp */,
-			);
-			path = swp;
-			sourceTree = "<group>";
-		};
-		3EE40D21160D04FA00531768 /* Products */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -168,7 +187,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EE40D52160D073E00531768 /* include in Headers */,
+				3E37AB86160E44E900B17616 /* camera.h in Headers */,
+				3E37AB88160E44E900B17616 /* curve.h in Headers */,
+				3E37AB89160E44E900B17616 /* extra.h in Headers */,
+				3E37AB8C160E44E900B17616 /* parse.h in Headers */,
+				3E37AB8E160E44E900B17616 /* surf.h in Headers */,
+				3E37AB8F160E44E900B17616 /* tuple.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,7 +211,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				3EE40D2E160D068300531768 /* PBXTargetDependency */,
+				3E37ABAE160E453800B17616 /* PBXTargetDependency */,
 			);
 			name = a1;
 			productName = "one-xcode";
@@ -215,8 +239,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 3EE40D21160D04FA00531768 /* Products */;
-					ProjectRef = 3EE40D20160D04FA00531768 /* vecmath 3.xcodeproj */;
+					ProductGroup = 3E37AB9E160E44F700B17616 /* Products */;
+					ProjectRef = 3E37AB9D160E44F700B17616 /* vecmath 3.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -231,21 +255,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EE40CC4160D04A900531768 /* camera.cpp in Sources */,
-				3EE40CC5160D04A900531768 /* curve.cpp in Sources */,
-				3EE40CC6160D04A900531768 /* main.cpp in Sources */,
-				3EE40CC8160D04A900531768 /* parse.cpp in Sources */,
-				3EE40CC9160D04A900531768 /* surf.cpp in Sources */,
+				3E37AB85160E44E900B17616 /* camera.cpp in Sources */,
+				3E37AB87160E44E900B17616 /* curve.cpp in Sources */,
+				3E37AB8A160E44E900B17616 /* main.cpp in Sources */,
+				3E37AB8B160E44E900B17616 /* parse.cpp in Sources */,
+				3E37AB8D160E44E900B17616 /* surf.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3EE40D2E160D068300531768 /* PBXTargetDependency */ = {
+		3E37ABAE160E453800B17616 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = vecmath;
-			targetProxy = 3EE40D2D160D068300531768 /* PBXContainerItemProxy */;
+			targetProxy = 3E37ABAD160E453800B17616 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -306,7 +330,7 @@
 			buildSettings = {
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/one-xcode/vecmath/lib\"",
+					"\"$(SRCROOT)/vecmath/lib\"",
 				);
 				PRODUCT_NAME = a1;
 			};
@@ -317,7 +341,7 @@
 			buildSettings = {
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/one-xcode/vecmath/lib\"",
+					"\"$(SRCROOT)/vecmath/lib\"",
 				);
 				PRODUCT_NAME = a1;
 			};
