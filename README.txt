@@ -18,3 +18,20 @@ The ones that I made are called:
 The corresponding screenshots are located in `img`
 
 The project also works with Xcode on Mac OS. Just open a1.xcodeproj and run.
+
+I didn't collaborate with anyone in the class.
+
+I referred to the following works while thinking about the assignment:
+- http://www.antigrain.com/research/adaptive_bezier/index.html
+- The course notes
+
+
+The only known issue with my code is that it doesn't seem to render
+weird.swp correctly. This indicates to me that there may be a bug
+in my generalized cylinder transformation function.
+
+I haven't done any of the extra credit problems yet.
+
+Really enjoyed this assignment. One of the funnest PSETs I've done in 
+my 2 years at MIT. Definitely helped solidify my understanding of
+curves and transformations in 3D. Not overwhelming.
