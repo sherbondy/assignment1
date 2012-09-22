@@ -176,7 +176,6 @@ namespace
     // w, h - width and height of the window in pixels.
     void reshapeFunc(int w, int h)
     {
-        cout << "RESHAPING!";
         camera.SetDimensions(w,h);
 
         camera.SetViewport(0,0,w,h);
