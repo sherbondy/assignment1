@@ -49,6 +49,7 @@ namespace
                            0,   0, 1/3, 1,
                            0,   0,   0, 1);
     
+
     const Matrix4f BSP(1/6, -1/2, 1/2, -1/6,
                        4/6,    0,  -1,  1/2,
                        1,    1/2, 1/2, -1/2,
@@ -97,11 +98,57 @@ Curve evalBezier( const vector< Vector3f >& P, unsigned steps )
     {
         P[i].print();
     }
+    
+    for (unsigned i = 0; i < (P.size() - 1); i += 3) {
+        // make a 4x4 matrix of 4 control points, plus a row of 0s.
+        // when creating the vec3fs for the points, ignore the 4th coord.
+        
+        // setting the columns here
+        // appending 0s to the point ends to let us make a 4x4 matrix
+        Vector4f P1(P[i],   0);
+        Vector4f P2(P[i+1], 0);
+        Vector4f P3(P[i+2], 0);
+        Vector4f P4(P[i+3], 0);
+        
+        Matrix4f G = Matrix4f(P1, P2, P3, P4, true);
+        
+        Matrix4f GB  = G * BEZ;  // to compute V
+        Matrix4f GdB = G * DBEZ; // to compute T
+                
+        for (unsigned step = 0; step < steps; step += 1) {
+            float t = (1.0/steps) * float(step);
+            Vector4f times(1, t, pow(t, 2), pow(t, 3));
+            
+            // We have to call .xyz() because we used a 4x4 matrix for
+            // G instead of a 3x4
+            Vector3f V = (GB  * times).xyz();
+            Vector3f T = (GdB * times).xyz().normalized();
+            
+            Vector3f N, B;
+            if (step == 0) {
+                // arbitrarily set B to the forward vector
+                B = Vector3f::FORWARD;
+                if (Vector3f::cross(T, B) == Vector3f::ZERO) {
+                    // change B if first selection was parallel to T.
+                    B = Vector3f::UP;
+                }
+                
+                N = Vector3f::cross(B, T).normalized();
+            } else {
+                CurvePoint previous = R.back();
+                
+                N = Vector3f::cross(previous.B, T).normalized();
+                B = Vector3f::cross(T, N).normalized();
+            }
+            
+            CurvePoint newPoint = { V, T, N, B};
+            R.push_back(newPoint);
+        }
+    }
 
     cerr << "\t>>> Steps (type steps): " << steps << endl;
     cerr << "\t>>> Returning curve with " << totalSampleCount << " samples" << endl;
 
-    // Right now this will just return this empty curve.
     return R;
 }
 
