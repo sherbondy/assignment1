@@ -40,7 +40,8 @@ void addFacesToSurface(Surface& surface, unsigned i, unsigned step,
 void sweepProfile(const Curve &profile, unsigned profileSize, unsigned step,
                   unsigned steps, Surface &surface, Matrix4f transform)
 {
-    Matrix4f transformInvT = transform.inverse().transposed();
+    
+    Matrix3f transformInvT = transform.getSubmatrix3x3(0, 0).inverse().transposed();
     
     for (unsigned i = 0; i < profileSize; ++i) {
         CurvePoint profilePoint = profile[i];
@@ -48,11 +49,7 @@ void sweepProfile(const Curve &profile, unsigned profileSize, unsigned step,
         
         Vector3f vertexT = (transform * Vector4f(profilePoint.V, 1)).xyz();
         // now the inverse transpose bit actually matters for drawing normals
-        Vector3f normalT = (transformInvT * Vector4f(profilePoint.N, 1)).xyz().normalized();
-        // guarantee that the normal is pointing outwards
-        if (profileB.z() > 0) {
-            normalT *= -1;
-        }
+        Vector3f normalT = (transformInvT * profilePoint.N).xyz().normalized();
         
         surface.VV.push_back(vertexT);
         surface.VN.push_back(normalT);
