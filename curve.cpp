@@ -103,7 +103,7 @@ Curve evalBezier( const vector< Vector3f >& P, unsigned steps )
         
         Matrix4f GB  = G * BEZ;  // to compute V
         Matrix4f GdB = G * DBEZ; // to compute T
-                
+            
         for (unsigned step = 0; step <= steps; step += 1) {
             float t = (1.f/steps) * step;
             Vector4f times(1, t, pow(t, 2), pow(t, 3));
@@ -131,7 +131,7 @@ Curve evalBezier( const vector< Vector3f >& P, unsigned steps )
                 B = Vector3f::cross(T, N).normalized();
             }
             
-            CurvePoint newPoint = { V, T, N, B};
+            CurvePoint newPoint = {V, T, N, B};
             R.push_back(newPoint);
         }
     }
@@ -165,7 +165,7 @@ Curve evalBspline( const vector< Vector3f >& P, unsigned steps )
     cerr << "\t>>> Steps (type steps): " << steps << endl;
     
     vector< Vector3f > transformedPoints;
-    for (unsigned i = 0; (i + 3) < P.size(); i += 1) {
+    for (unsigned i = 0; (i + 3) < P.size(); ++i) {
         Matrix4f G = GforPAtIndex(P, i);
         
         Matrix4f GBezBspInv = G * BSP * BEZ_INV;

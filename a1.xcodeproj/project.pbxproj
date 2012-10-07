@@ -24,9 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3E37ABAD160E453800B17616 /* PBXContainerItemProxy */ = {
+		3EB41FE616212B9400777D9B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3E37AB9D160E44F700B17616 /* vecmath 3.xcodeproj */;
+			containerPortal = 3EB41FDF16212B8300777D9B /* vecmath.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 3EE40D00160D04FA00531768;
 			remoteInfo = vecmath;
@@ -69,16 +69,8 @@
 		3E37AB9A160E44F000B17616 /* weird.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = weird.swp; sourceTree = "<group>"; };
 		3E37AB9B160E44F000B17616 /* weirder.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = weirder.swp; sourceTree = "<group>"; };
 		3E37AB9C160E44F000B17616 /* wineglass.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = wineglass.swp; sourceTree = "<group>"; };
-		3E37AB9D160E44F700B17616 /* vecmath 3.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "vecmath 3.xcodeproj"; path = "vecmath/vecmath 3.xcodeproj"; sourceTree = "<group>"; };
-		3E37ABA5160E450F00B17616 /* Matrix2f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Matrix2f.h; sourceTree = "<group>"; };
-		3E37ABA6160E450F00B17616 /* Matrix3f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Matrix3f.h; sourceTree = "<group>"; };
-		3E37ABA7160E450F00B17616 /* Matrix4f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Matrix4f.h; sourceTree = "<group>"; };
-		3E37ABA8160E450F00B17616 /* Quat4f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Quat4f.h; sourceTree = "<group>"; };
-		3E37ABA9160E450F00B17616 /* vecmath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vecmath.h; sourceTree = "<group>"; };
-		3E37ABAA160E450F00B17616 /* Vector2f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector2f.h; sourceTree = "<group>"; };
-		3E37ABAB160E450F00B17616 /* Vector3f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector3f.h; sourceTree = "<group>"; };
-		3E37ABAC160E450F00B17616 /* Vector4f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vector4f.h; sourceTree = "<group>"; };
 		3E37ABB0160E462E00B17616 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		3EB41FDF16212B8300777D9B /* vecmath.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = vecmath.xcodeproj; path = vecmath/vecmath.xcodeproj; sourceTree = "<group>"; };
 		3EE40CA6160D040700531768 /* a1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = a1; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EE40D24160D05D100531768 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		3EE40D26160D05D500531768 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -118,27 +110,11 @@
 			path = swp;
 			sourceTree = "<group>";
 		};
-		3E37AB9E160E44F700B17616 /* Products */ = {
+		3EB41FE016212B8300777D9B /* Products */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		3E37ABA4160E450F00B17616 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				3E37ABA5160E450F00B17616 /* Matrix2f.h */,
-				3E37ABA6160E450F00B17616 /* Matrix3f.h */,
-				3E37ABA7160E450F00B17616 /* Matrix4f.h */,
-				3E37ABA8160E450F00B17616 /* Quat4f.h */,
-				3E37ABA9160E450F00B17616 /* vecmath.h */,
-				3E37ABAA160E450F00B17616 /* Vector2f.h */,
-				3E37ABAB160E450F00B17616 /* Vector3f.h */,
-				3E37ABAC160E450F00B17616 /* Vector4f.h */,
-			);
-			name = include;
-			path = vecmath/include;
 			sourceTree = "<group>";
 		};
 		3EE40C9B160D040700531768 = {
@@ -158,8 +134,6 @@
 				3E37AB84160E44E900B17616 /* tuple.h */,
 				3E37AB90160E44F000B17616 /* swp */,
 				3EE40D2C160D062000531768 /* frameworks */,
-				3E37ABA4160E450F00B17616 /* include */,
-				3E37AB9D160E44F700B17616 /* vecmath 3.xcodeproj */,
 				3EE40CA7160D040700531768 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -175,6 +149,7 @@
 		3EE40D2C160D062000531768 /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3EB41FDF16212B8300777D9B /* vecmath.xcodeproj */,
 				3EE40D26160D05D500531768 /* OpenGL.framework */,
 				3EE40D24160D05D100531768 /* GLUT.framework */,
 				3EE40D2A160D061800531768 /* libvecmath.a */,
@@ -213,7 +188,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				3E37ABAE160E453800B17616 /* PBXTargetDependency */,
+				3EB41FE716212B9400777D9B /* PBXTargetDependency */,
 			);
 			name = a1;
 			productName = "one-xcode";
@@ -241,8 +216,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 3E37AB9E160E44F700B17616 /* Products */;
-					ProjectRef = 3E37AB9D160E44F700B17616 /* vecmath 3.xcodeproj */;
+					ProductGroup = 3EB41FE016212B8300777D9B /* Products */;
+					ProjectRef = 3EB41FDF16212B8300777D9B /* vecmath.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -268,10 +243,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3E37ABAE160E453800B17616 /* PBXTargetDependency */ = {
+		3EB41FE716212B9400777D9B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = vecmath;
-			targetProxy = 3E37ABAD160E453800B17616 /* PBXContainerItemProxy */;
+			targetProxy = 3EB41FE616212B9400777D9B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -330,6 +305,7 @@
 		3EE40CB1160D040700531768 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/vecmath/include\"";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/vecmath/lib\"",
@@ -341,6 +317,7 @@
 		3EE40CB2160D040700531768 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/vecmath/include\"";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/vecmath/lib\"",
