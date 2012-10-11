@@ -28,7 +28,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 3EB41FDF16212B8300777D9B /* vecmath.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 3EE40D00160D04FA00531768;
+			remoteGlobalIDString = 3EE40C6E160D01EC00531768;
 			remoteInfo = vecmath;
 		};
 /* End PBXContainerItemProxy section */
@@ -71,7 +71,7 @@
 		3E37AB9C160E44F000B17616 /* wineglass.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = wineglass.swp; sourceTree = "<group>"; };
 		3E37ABB0160E462E00B17616 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		3EB41FDF16212B8300777D9B /* vecmath.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = vecmath.xcodeproj; path = vecmath/vecmath.xcodeproj; sourceTree = "<group>"; };
-		3EE40CA6160D040700531768 /* a1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = a1; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EE40CA6160D040700531768 /* one */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = one; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EE40D24160D05D100531768 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		3EE40D26160D05D500531768 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		3EE40D2A160D061800531768 /* libvecmath.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libvecmath.a; path = "one-xcode/vecmath/lib/libvecmath.a"; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 		3EE40CA7160D040700531768 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3EE40CA6160D040700531768 /* a1 */,
+				3EE40CA6160D040700531768 /* one */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -176,9 +176,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3EE40CA5160D040700531768 /* a1 */ = {
+		3EE40CA5160D040700531768 /* one */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3EE40CB0160D040700531768 /* Build configuration list for PBXNativeTarget "a1" */;
+			buildConfigurationList = 3EE40CB0160D040700531768 /* Build configuration list for PBXNativeTarget "one" */;
 			buildPhases = (
 				3EE40D2F160D06A900531768 /* Headers */,
 				3EE40CA2160D040700531768 /* Sources */,
@@ -190,9 +190,9 @@
 			dependencies = (
 				3EB41FE716212B9400777D9B /* PBXTargetDependency */,
 			);
-			name = a1;
+			name = one;
 			productName = "one-xcode";
-			productReference = 3EE40CA6160D040700531768 /* a1 */;
+			productReference = 3EE40CA6160D040700531768 /* one */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -204,7 +204,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Ethan Sherbondy";
 			};
-			buildConfigurationList = 3EE40CA0160D040700531768 /* Build configuration list for PBXProject "a1" */;
+			buildConfigurationList = 3EE40CA0160D040700531768 /* Build configuration list for PBXProject "one" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -222,7 +222,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				3EE40CA5160D040700531768 /* a1 */,
+				3EE40CA5160D040700531768 /* one */,
 			);
 		};
 /* End PBXProject section */
@@ -310,7 +310,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/vecmath/lib\"",
 				);
-				PRODUCT_NAME = a1;
+				PRODUCT_NAME = one;
 			};
 			name = Debug;
 		};
@@ -322,14 +322,14 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/vecmath/lib\"",
 				);
-				PRODUCT_NAME = a1;
+				PRODUCT_NAME = one;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3EE40CA0160D040700531768 /* Build configuration list for PBXProject "a1" */ = {
+		3EE40CA0160D040700531768 /* Build configuration list for PBXProject "one" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3EE40CAE160D040700531768 /* Debug */,
@@ -338,7 +338,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3EE40CB0160D040700531768 /* Build configuration list for PBXNativeTarget "a1" */ = {
+		3EE40CB0160D040700531768 /* Build configuration list for PBXNativeTarget "one" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3EE40CB1160D040700531768 /* Debug */,
