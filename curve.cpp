@@ -116,7 +116,8 @@ Curve evalBezier( const vector< Vector3f >& P, unsigned steps )
             Vector3f N, B;
             
             if (i == 0 && step == 0) {
-                // arbitrarily set B to the forward vector
+                // arbitrarily set B to the forward vector for the initial step
+                // of the first Bezier segment.
                 B = Vector3f::FORWARD;
                 if (Vector3f::cross(T, B) == Vector3f::ZERO) {
                     // change B if first selection was parallel to T.
