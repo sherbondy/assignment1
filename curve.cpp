@@ -115,7 +115,7 @@ Curve evalBezier( const vector< Vector3f >& P, unsigned steps )
             
             Vector3f N, B;
             
-            if (step == 0) {
+            if (i == 0 && step == 0) {
                 // arbitrarily set B to the forward vector
                 B = Vector3f::FORWARD;
                 if (Vector3f::cross(T, B) == Vector3f::ZERO) {
