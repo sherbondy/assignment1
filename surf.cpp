@@ -76,7 +76,7 @@ Surface makeSurfRev(const Curve &profile, unsigned steps)
     // RotateY(radians) * CurvePoint.V, do for each point in profile, radians = 2pi/steps
     
     // first iteration: establish the vectors and normals
-    unsigned profileSize = profile.size();
+    unsigned profileSize = (unsigned)profile.size();
     
     for (unsigned step = 0; step < steps; step++) {
         float rotation = 2 * M_PI * step / steps;
@@ -98,8 +98,8 @@ Surface makeGenCyl(const Curve &profile, const Curve &sweep )
         exit(0);
     }
 
-    unsigned sweepSize   = sweep.size();
-    unsigned profileSize = profile.size();
+    unsigned sweepSize   = (unsigned)sweep.size();
+    unsigned profileSize = (unsigned)profile.size();
 
     for (unsigned step = 0; step < sweepSize; ++step) {
         CurvePoint point = sweep[step];
