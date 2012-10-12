@@ -69,8 +69,8 @@
 		3E37AB9A160E44F000B17616 /* weird.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = weird.swp; sourceTree = "<group>"; };
 		3E37AB9B160E44F000B17616 /* weirder.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = weirder.swp; sourceTree = "<group>"; };
 		3E37AB9C160E44F000B17616 /* wineglass.swp */ = {isa = PBXFileReference; lastKnownFileType = text; path = wineglass.swp; sourceTree = "<group>"; };
-		3E37ABB0160E462E00B17616 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		3EB41FDF16212B8300777D9B /* vecmath.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = vecmath.xcodeproj; path = vecmath/vecmath.xcodeproj; sourceTree = "<group>"; };
+		3EDF65EF1627C8AA00AFE442 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		3EE40CA6160D040700531768 /* one */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = one; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EE40D24160D05D100531768 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		3EE40D26160D05D500531768 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -120,7 +120,7 @@
 		3EE40C9B160D040700531768 = {
 			isa = PBXGroup;
 			children = (
-				3E37ABB0160E462E00B17616 /* README.txt */,
+				3EDF65EF1627C8AA00AFE442 /* README.md */,
 				3E37AB7A160E44E900B17616 /* camera.cpp */,
 				3E37AB7B160E44E900B17616 /* camera.h */,
 				3E37AB7C160E44E900B17616 /* curve.cpp */,
